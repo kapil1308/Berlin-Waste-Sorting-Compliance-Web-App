@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campaign Recommendations</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Campaign Recommendations for Berlin</h1>
+    <p>Enter a district name to get tailored waste sorting campaign suggestions.</p>
+    <form method="POST">
+        <label for="district">District:</label>
+        <input type="text" id="district" name="district" value="{{ district or '' }}">
+        <input type="submit" value="Get Recommendation">
+    </form>
+    {% if recommendation %}
+        <h3>Recommendation:</h3>
+        <p>{{ recommendation }}</p>
+    {% endif %}
+    <p><a href="/">Back to Dashboard</a> | <a href="/map">View Non-Compliant Districts</a></p>
+</body>
+</html>
